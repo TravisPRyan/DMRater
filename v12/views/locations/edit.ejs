@@ -1,0 +1,37 @@
+<% include ../partials/header.ejs %>
+<h1>
+	Edit form
+</h1>
+
+
+
+<div class="container">
+	<div class="row">
+		<h1 style="text-align: center">Edit <%= location.name %></h1>
+		<div style="width: 30%; margin: 20px auto;">
+			<form action="/locations/<%= location._id %>?_method=PUT" method="POST">
+
+				<div class="form-group">
+					<input class="form-control" type="text" name="location" value="<%= location.name %>">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="number" name="price" value="<%= location.price %> " min="0.01" step="0.01">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="image" value="<%= location.image %>">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="description" value="<%= location.description %>">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-lrg btn-default btn-primary btn-block">Submit</button>	
+				</div>
+		</form>
+			<a href="/locations">Return to Locations</a>
+		</div>
+		
+	</div>
+
+
+</div>
+<% include ../partials/footer.ejs %>
