@@ -1,0 +1,30 @@
+body {
+	background: ;
+;
+}
+/* .navbar-default {
+	background-color: #222;
+    border-color: #080808;
+	background-image: none;
+	background-repeat: no-repeat;
+} */
+
+/* input, textarea{
+    background-color:#080808;
+    color: #222;
+} */
+
+.delete-form {
+	display: inline;
+}
+.thumbnail img {
+	width: 100%;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail caption-full {
+	padding: 9px;
+}
