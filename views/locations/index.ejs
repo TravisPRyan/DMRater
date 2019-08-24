@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+
+    <header class="jumbotron">
+        <div class="container">
+            <h1>DMR8||</h1>
+            <p>A Crowd Sourced Ratings System for 5E Venues and DMs.</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/locations/new">Add New Venue</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% locations.forEach(function(location){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= location.image %>">
+                <div class="caption">
+                    <h4><%= location.name %></h4>
+                    <% if (location.rating === 0) { %>
+                    <em>No reviews yet.</em>
+                    <% } else { %>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star <% if (location.rating > 1.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (location.rating > 2.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (location.rating > 3.5) { %> checked <% } %>"></span>
+                    <span class="fa fa-star <% if (location.rating > 4.5) { %> checked <% } %>"></span>
+                    <% } %>
+                </div>
+                <p>
+                    <a href="/locations/<%= location._id %>" class="btn btn-primary">More Info</a>
+                </p>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+
+
+<% include ../partials/footer %>
