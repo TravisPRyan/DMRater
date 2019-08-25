@@ -1,3 +1,20 @@
+Push 23 
+NPM audit fix vulnerabilities
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Push 22 Review System
 First iteration of finalized version.
 Add Review Schema.
@@ -10,3 +27,7 @@ Update location views index+show to display ratings.
 Various cleanup.
 Note* Node modules have been removed.
 
+git status
+git add-A
+git remote add origin git@github.com:TravisPRyan/DMRater.git
+git push -u origin v14
