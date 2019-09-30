@@ -6,7 +6,7 @@ var express        = require("express"),
     passport       = require("passport"),
     LocalStrategy  = require("passport-local"),
     methodOverride = require("method-override"),
-    Location     = require("./models/location"),
+    Location       = require("./models/location"),
     Comment        = require("./models/comment"),
     User           = require("./models/user"),
     seedDB         = require("./seeds")
@@ -14,11 +14,15 @@ var express        = require("express"),
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
     reviewRoutes     = require("./routes/reviews"),
-    locationRoutes = require("./routes/locations"),
+    locationRoutes   = require("./routes/locations"),
     indexRoutes      = require("./routes/index")
 
+//local connection
+// mongoose.connect("mongodb://localhost:27017/DMRaterProd", { useNewUrlParser: true });
 
-mongoose.connect("mongodb://localhost:27017/DMRaterProd", { useNewUrlParser: true });
+
+mongoose.connect("mongodb+srv://GT78:bobcat@cluster0-h3qmh.mongodb.net/DMRater?retryWrites=true&w=majority", { useNewUrlParser: true });
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
