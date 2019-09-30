@@ -9,6 +9,7 @@ var express        = require("express"),
     Location       = require("./models/location"),
     Comment        = require("./models/comment"),
     User           = require("./models/user"),
+	port           = process.env.PORT || 3000;
     seedDB         = require("./seeds")
     
 //requiring routes
@@ -64,6 +65,6 @@ app.use("/locations/:id/reviews", reviewRoutes);
 //    console.log("The YelpCamp Server Has Started!");
 // });
 
-app.listen(3000, function(){
+app.listen(port, function(){
 	console.log("DMRater v14 Server listening on PORT 3000");
 });
