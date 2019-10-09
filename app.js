@@ -18,11 +18,10 @@ var commentRoutes    = require("./routes/comments"),
     locationRoutes   = require("./routes/locations"),
     indexRoutes      = require("./routes/index")
 
-//local connection
-// mongoose.connect("mongodb://localhost:27017/DMRaterProd", { useNewUrlParser: true });
 
 
-mongoose.connect("mongodb+srv://GT78:bobcat@cluster0-h3qmh.mongodb.net/DMRater?retryWrites=true&w=majority", { useNewUrlParser: true });
+//connect to prod or test db
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -66,5 +65,5 @@ app.use("/locations/:id/reviews", reviewRoutes);
 // });
 
 app.listen(port, function(){
-	console.log("DMRater v14 Server listening on PORT 3000");
+	console.log("DMRater v16 Server has started!");
 });

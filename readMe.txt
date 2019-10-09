@@ -1,5 +1,7 @@
-Push 24 Dark Theme
+Push 25 ENV
 
-Add Dark theme. 
-Update BS version (3.3.7 -> 3.4.1).
+Seperate propduction and test databases. 
+Implement environmental variables.
+
+https://quiet-bayou-05607.herokuapp.com/
 
