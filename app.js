@@ -6,19 +6,23 @@ var express        = require("express"),
     passport       = require("passport"),
     LocalStrategy  = require("passport-local"),
     methodOverride = require("method-override"),
-    Location     = require("./models/location"),
+    Location       = require("./models/location"),
     Comment        = require("./models/comment"),
     User           = require("./models/user"),
+	port           = process.env.PORT || 3000;
     seedDB         = require("./seeds")
     
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
     reviewRoutes     = require("./routes/reviews"),
-    locationRoutes = require("./routes/locations"),
+    locationRoutes   = require("./routes/locations"),
     indexRoutes      = require("./routes/index")
 
 
-mongoose.connect("mongodb://localhost:27017/DMRaterProd", { useNewUrlParser: true });
+
+//connect to prod or test db
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -60,6 +64,6 @@ app.use("/locations/:id/reviews", reviewRoutes);
 //    console.log("The YelpCamp Server Has Started!");
 // });
 
-app.listen(3000, function(){
-	console.log("DMRater v14 Server listening on PORT 3000");
+app.listen(port, function(){
+	console.log("DMRater v16 Server has started!");
 });
