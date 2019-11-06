@@ -22,7 +22,7 @@ var commentRoutes    = require("./routes/comments"),
 
 //connect to prod or test db
 mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
-
+// 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
