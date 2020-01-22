@@ -1,9 +1,9 @@
-Push 25.1 ENV.
+DMRater - A crowd sourced social media platform providing a ratings system for tabletop gaming venues and game masters.
 
-Separate production and test databases. 
-Implement environmental variables.
-Patched security vulnerabilities.
+Developed using RESTful conventions, with a responsive U.I., providing full C.R.U.D. functionality over venues, reviews, and comments.
 
-https://quiet-bayou-05607.herokuapp.com/
+Implemented user registration, authorization, and authentication processes, preventing unauthorized users from managing non-original content.
+
+Utilized: Node.js, Express, MongoDB, Mongoose, Passport, HTML/CSS, Bootstrap, Heroku, Git.
 
 
